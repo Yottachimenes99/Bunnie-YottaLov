@@ -1,0 +1,213 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: white;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3em;
+    text-align: center;
+    padding: 20px 0;
+}
+.diagonal-banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: black;
+    background-image: url('https://png.pngtree.com/background/20230520/original/pngtree-collection-of-roses-in-a-garden-picture-image_2670735.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.diagonal-banner::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    width: 150%;
+    height: 250px;
+    background-color: rgb(0, 206, 0);
+    transform: rotate(-10deg);
+    z-index: 1;
+}
+.diagonal-banner span {
+    position: absolute;
+    top: 0px;
+    left: -200px;
+    transform: rotate(-15deg);
+    color: white;
+    font-size: 2em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    z-index: 2;
+    animation: moveText 5s linear infinite;
+    line-height: 1.5;
+    white-space: pre;
+}
+.diagonal-banner .text1 { animation-delay: 0s; }
+.diagonal-banner .text2 { animation-delay: 0.5s; }
+.diagonal-banner .text3 { animation-delay: 1s; }
+.diagonal-banner .text4 { animation-delay: 1.5s; }
+.diagonal-banner .text5 { animation-delay: 2s; }
+.diagonal-banner .text6 { animation-delay: 2.5s; }
+.diagonal-banner .text7 { animation-delay: 3s; }
+.diagonal-banner .text8 { animation-delay: 3.5s; }
+@keyframes moveText {
+    0% {
+        left: -300px;
+        top: 190px;
+    }
+    100% {
+        left: 100%;
+        top: -60px;
+    }
+}
+.diagonal-red-banner {
+    position: relative;
+    width: 100%;
+    height: 325px;
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3863373c-b4a7-4191-946d-fa586d4717d3/derv629-2650f6f8-48ae-4b8f-a485-27a2543c4175.png/v1/fill/w_1192,h_670,q_70,strp/bunny_aesthetic_by_bunnyuvq_derv629-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvMzg2MzM3M2MtYjRhNy00MTkxLTk0NmQtZmE1ODZkNDcxN2QzXC9kZXJ2NjI5LTI2NTBmNmY4LTQ4YWUtNGI4Zi1hNDg1LTI3YTI1NDNjNDE3NS5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.0rOKX7ADeF71Qsl6JgPwSHNkTv22o9CsE33ZGGt74pE');
+    overflow: hidden;
+}
+.diagonal-red-banner::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: -100px;
+    width: 150%;
+    height: 250px;
+    background-color: red;
+    transform: rotate(10deg);
+    z-index: 1;
+}
+.diagonal-red-banner span {
+    position: absolute;
+    bottom: 0px;
+    left: -200px;
+    transform: rotate(15deg);
+    color: black;
+    font-size: 2em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    z-index: 2;
+    animation: moveRedText 5s linear infinite;
+    line-height: 1.5;
+    white-space: pre;
+}
+.diagonal-red-banner .text1 { animation-delay: 0s; }
+.diagonal-red-banner .text2 { animation-delay: 0.5s; }
+.diagonal-red-banner .text3 { animation-delay: 1s; }
+.diagonal-red-banner .text4 { animation-delay: 1.5s; }
+.diagonal-red-banner .text5 { animation-delay: 2s; }
+.diagonal-red-banner .text6 { animation-delay: 2.5s; }
+.diagonal-red-banner .text7 { animation-delay: 3s; }
+.diagonal-red-banner .text8 { animation-delay: 3.5s; }
+@keyframes moveRedText {
+    0% {
+        left: -300px;
+        bottom: 250px;
+    }
+    100% {
+        left: 100%;
+        bottom: -50px;
+    }
+}   
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.gallery img {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    object-fit: cover;
+    border: 5px solid white;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.gallery img:hover {
+    transform: scale(1.1);
+}
+.expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+.expanded img {
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    max-height: 90%;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: rgb(234, 0, 255);
+    font-weight: bold;
+    font-size: 30px;
+    user-select: none;
+}
+
+.prev {
+    left: 150px;
+}
+
+.next {
+    right: 150px;
+}
+
+.prev:hover, .next:hover {
+    color: #ccc; 
+}
+.text {
+    position: absolute;
+    top: 400px;
+    right: 10px;
+    font-size: 50px;
+    font-style: inherit;
+    font-family: cursive;
+    font-weight: bold;
+    color: rgb(247, 0, 255);
+    transform: rotate(-30deg);
+    animation: bounce 1s infinite alternate;
+    z-index: 3;
+}
+
+@keyframes bounce {
+    0% { transform: translateX(0) rotate(20deg); }
+    50% { transform: translateX(-10px) rotate(20deg); }
+    100% { transform: translateX(10px) rotate(20deg); }
+}
